@@ -1,6 +1,7 @@
 #code goes here
 require 'pry'
 require 'json'
+require 'date'
 class Story
 
   attr_reader :section,
@@ -20,7 +21,7 @@ class Story
     @title = story_hash["title"]
     @abstract = story_hash["abstract"]
     @link = story_hash["url"]
-    @published = story_hash["published_date"]
+    @published = Date.parse(story_hash["published_date"]).strftime("%B %d, %Y")
 
     story_hash["multimedia"].each do |image_attr|
       if image_attr["format"] == "Normal"

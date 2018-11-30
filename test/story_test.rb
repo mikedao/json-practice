@@ -23,7 +23,7 @@ class StoryTest < Minitest::Test
     expected_link = "https://www.nytimes.com/2018/11/29/us/politics/trump-russia-felix-sater-michael-cohen.html"
     assert_equal expected_link, story.link
 
-    assert_equal "2018-11-29T18:46:27-05:00", story.published
+    assert_equal "November 29, 2018", story.published
 
     expected_photo = "https://static01.nyt.com/images/2018/11/30/world/30trumpmoscow-1-print/30trumpmoscow7-articleInline.jpg"
     assert_equal expected_photo, story.photo
