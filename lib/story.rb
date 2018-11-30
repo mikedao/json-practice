@@ -22,7 +22,29 @@ class Story
   def create_things
     file = File.read("./data/nytimes.json")
     data_hash = Json.parse(file)["results"]
-    
+      data_hash.map do |d|
+        if data_hash[:multimedia][2][:format] == "Normal"
+        {
+          section: d["section"]
+          subsection: d["subsection"]
+          title: d["title"]
+          abstract: d["abstract"]
+          link: d["link"]
+          published: d["published"]
+          photo: d["multimedia"][2]["url"]
+        }
+      else
+        {
+          section: d["section"]
+          subsection: d["subsection"]
+          title: d["title"]
+          abstract: d["abstract"]
+          link: d["link"]
+          published: d["published"]
+          photo: "No Photo Available"
+        }
+      end
+    end
 
   end
 
