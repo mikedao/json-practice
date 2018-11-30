@@ -1,1 +1,10 @@
-#code goes here
+require 'pry'
+
+class Story
+  def initialize
+
+  end
+
+  
+
+end
