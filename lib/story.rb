@@ -41,7 +41,8 @@ class Story
       title = result["title"]
       abstract = result["abstract"]
       link = result["url"]
-      published = result["published_date"]
+      published = Date.parse(@hash.first["published_date"])
+      # didn't quite get there with the date format
       photo_hash = result["multimedia"].find{|i|i["format"] == "Normal"}
       photo = photo_hash ? photo_hash["url"] : "No Photo Available"
       

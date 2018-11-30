@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'pry'
 require './lib/story.rb'
+require 'date'
 
 class StoryTest < Minitest::Test
   attr_reader :hash
@@ -21,7 +22,7 @@ class StoryTest < Minitest::Test
     title = @hash.first["title"]
     abstract = @hash.first["abstract"]
     link = @hash.first["url"]
-    published = @hash.first["published_date"]
+    published = Date.parse(@hash.first["published_date"])
     photo_hash = @hash.first["multimedia"].find{|i|i["format"] == "Normal"}
     photo = photo_hash["url"]
     
