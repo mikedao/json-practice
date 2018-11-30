@@ -8,9 +8,4 @@ class StoryTest < Minitest::Test
     assert_instance_of Story, story
   end
 
-  def test_it_loads_json
-    objects = Story.load_file("/data/nytimes.json")
-
-    assert_instance_of Hash, objects
-  end
 end
