@@ -1,6 +1,12 @@
+require 'json'
+require 'pry'
+require_relative 'story.rb'
+
 class StoryRepo
 
-  def initialize(data_file)
+  attr_reader :data_file, :stories
+
+  def initialize(data_file, stories=[])
     @data_file = data_file
     @stories = stories
   end
@@ -8,17 +14,17 @@ class StoryRepo
   def load_file(file)
     file = File.read(@data_file)
     data_hash = JSON.parse(file)
-    data_hash.map do |key, value|
-      data_hash["section"] = data_hash["section"].to_i
-      data_hash["subsection"] = data_hash["subsection"]
-      data_hash["link"] = data_hash["link"]
-      data_hash["published"] = data_hash["published"]
-      data_hash["photo"] = data_hash["photo"]
-      data_hash["title"] = data_hash["title"]
-      data_hash["abstract"] = data_hash["abstract"]
+    data_hash["results"].map! do |attributes|
+      attributes["section"] if attributes["section"]
+      attributes["subsection"] if attributes["subsection"]
+      attributes["link"] if attributes["link"]
+      attributes["published"] if attributes["published"]
+      attributes["photo"] if attributes["photo"]
+      attributes["title"] if attributes["title"]
+      attributes["abstract"] if attributes["abstract"]
+    end
       new_story = Story.new(data_hash)
       @stories << new_story
-    end
   end
 
 end
