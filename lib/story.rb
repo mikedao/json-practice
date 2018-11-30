@@ -1,6 +1,13 @@
 require 'pry'
 
 class Story
+  attr_reader :section,
+              :subsection,
+              :title,
+              :abstract,
+              :link, 
+              :published,
+              :photo
 
   def initialize(hash)
     @section = hash[:section]
