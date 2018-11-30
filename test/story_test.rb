@@ -3,7 +3,7 @@ require 'minitest/pride'
 require 'pry'
 require './lib/story'
 
-class NytimesTest < Minitest::Test
+class StoryTest < Minitest::Test
 
   def test_it_exists
     story = Story.new({})
