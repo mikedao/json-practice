@@ -3,13 +3,13 @@ require './lib/story.rb'
 describe Story do
   before :each do
     @data = {
-      section: "one",
-      subsection: "two",
-      title: "three",
-      abstract: "four",
-      link: "alink",
-      published: "today's date",
-      photo: "alink"
+      "section" => "one",
+      "subsection" => "two",
+      "title" => "three",
+      "abstract" => "four",
+      "link" => "alink",
+      "published" => "today's date",
+      "multimedia" => [{"url" => "alink"}]
     }
     @story = Story.new(@data)
   end
