@@ -16,6 +16,6 @@ describe StoryLoader do
     expect(a_story.abstract).to eq("During the presidential campaign, Michael D. Cohen and Felix Sater, an associate with a criminal past, pursued a new Trump Tower project with a former spymaster’s help.")
     expect(a_story.link).to eq("https://www.nytimes.com/2018/11/29/us/politics/trump-russia-felix-sater-michael-cohen.html")
     expect(a_story.published).to eq("November 29, 2018")
-    expect(a_story.photo).to eq("https://static01.nyt.com/images/2018/11/30/world/30trumpmoscow-1-print/30trumpmoscow7-thumbStandard.jpg")
+    expect(a_story.photo).to eq("https://static01.nyt.com/images/2018/11/30/world/30trumpmoscow-1-print/30trumpmoscow7-articleInline.jpg")
   end
 end

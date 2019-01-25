@@ -9,7 +9,7 @@ describe Story do
       "abstract" => "four",
       "url" => "alink",
       "published_date" => "2018-11-29T23:49:43-05:00",
-      "multimedia" => [{"url" => "alink"}]
+      "multimedia" => [{"url" => "alink", "format" => "Normal"}]
     }
     @story = Story.new(@data)
   end
@@ -46,7 +46,7 @@ describe Story do
       "abstract" => "four",
       "url" => "alink",
       "published_date" => "2018-11-29T23:49:43-05:00",
-      "multimedia" => [{"url" => ""}]
+      "multimedia" => [{"format" => "thumbnail"}]
     }
     story = Story.new(data)
     expect(story.photo).to eq("No photo available")

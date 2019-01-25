@@ -14,14 +14,22 @@ class Story
     @abstract = data["abstract"]
     @link = data["url"]
     @published = Date.parse(data["published_date"]).strftime("%B %d, %Y")
-    @photo = photo_maker(data["multimedia"].first["url"])
+    @photo = photo_maker(data["multimedia"])
   end
 
   def photo_maker(data)
-    if data.length > 0
-      data
+    determine = false
+    image = []
+    data.each do |hash|
+      if hash["format"] == "Normal"
+        determine = true
+        image << hash["url"]
+      end
+    end
+    if determine == true
+      return image.first
     else
-      "No photo available"
+      return "No photo available"
     end
   end
 end
