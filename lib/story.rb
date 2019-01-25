@@ -10,8 +10,7 @@ class Story
     @abstract = story_hash["abstract"]
     @link = story_hash["url"]
     @published = story_hash["published_date"]
-    @photo = story_hash["multimedia"][2]["url"]
-
+    @photo = story_hash["multimedia"][2]["url"] || default_photo
   end
 
   def self.create_stories
@@ -20,6 +19,12 @@ class Story
     results = json["results"]
     results.map do |story|
       self.new(story)
+    end
+  end
+
+  def default_photo
+    if @photo == nil
+      @photo = "No Photo Available"
     end
   end
 
