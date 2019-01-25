@@ -28,5 +28,7 @@ class StoryTest < Minitest::Test
     stories.each do |story|
       assert_instance_of Story, story
     end
+    assert_equal stories.first.title, "How a Lawyer, a Felon and a Russian General Chased a Moscow Trump Tower Deal"
+    assert_equal stories.last.title, "To Treat Eating Disorders, It Sometimes Takes Two"
   end
 end
