@@ -38,4 +38,17 @@ describe Story do
   it 'has a photo' do
     expect(@story.photo).to eq("alink")
   end
+  it 'photo_maker' do
+    data = {
+      "section" => "one",
+      "subsection" => "two",
+      "title" => "three",
+      "abstract" => "four",
+      "url" => "alink",
+      "published_date" => "2018-11-29T23:49:43-05:00",
+      "multimedia" => [{"url" => ""}]
+    }
+    story = Story.new(data)
+    expect(story.photo).to eq("No photo available")
+  end
 end
