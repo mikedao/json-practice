@@ -7,8 +7,8 @@ describe Story do
       "subsection" => "two",
       "title" => "three",
       "abstract" => "four",
-      "link" => "alink",
-      "published" => "today's date",
+      "url" => "alink",
+      "published_date" => "2018-11-29T23:49:43-05:00",
       "multimedia" => [{"url" => "alink"}]
     }
     @story = Story.new(@data)
@@ -33,7 +33,7 @@ describe Story do
     expect(@story.link).to eq("alink")
   end
   it 'has a published' do
-    expect(@story.published).to eq("today's date")
+    expect(@story.published).to eq("November 29, 2018")
   end
   it 'has a photo' do
     expect(@story.photo).to eq("alink")
