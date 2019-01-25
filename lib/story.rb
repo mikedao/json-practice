@@ -45,7 +45,7 @@ class Story
           }
       end
     end
-    array_o_stories = story_data.map do |data|
+    array_o_storie = story_data.map do |data|
       Story.new(data)
     end
   end
