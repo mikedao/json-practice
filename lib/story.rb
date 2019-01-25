@@ -26,7 +26,7 @@ class Story
         abstract: json_story["abstract"],
         link: json_story["url"],
         published: Date.parse(json_story["published_date"].split('T').first).strftime("%B %e %Y"),
-        photo: json_story["multimedia"].first["url"],
+        photo: json_story["multimedia"][2]["url"],
       }
       Story.new(hash)
     end
