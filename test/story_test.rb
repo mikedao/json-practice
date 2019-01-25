@@ -1,8 +1,8 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/boat'
+require './lib/story'
 
-class BoatTest < Minitest::Test
+class StoryTest < Minitest::Test
 
   def test_it_exists
     file = File.read('./data/nytimes.json')
